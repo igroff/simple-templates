@@ -10,6 +10,7 @@
 # ordering.  Thus if you wish to control the order more explicitly you can
 # name your includes 01_*.inc, 02_*.inc and so on.
 ##############################################################################
+# begin include processing
 MY_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export INCLUDE_LIST=${INCLUDE_LIST}
 for include in ${MY_DIR}/*.inc
@@ -27,6 +28,4 @@ do
     INCLUDE_LIST=${INCLUDE_LIST}:${INCLUDE_KEY}
   fi
 done
-
-echo "env: " $ENVIRONMENT_INCLUDED
-echo "too: " $TOOLS_INCLUDED
+# end include processing
